@@ -1,23 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useQuery, gql } from '@apollo/client'
+import useFetch from '../hooks/useFetch'
 
-const ARTICLES = gql`
-    query GetArticles {
-        articles {
-            data {
-                id,
-                attributes {
-                    title,
-                    body
-                }
-            }
-        }
-    }
-`
+
 
 export default function ArticlesTable() {
-    const { error, loading, data } = useQuery('https://localhost:1337/api/articles')
+    const { error, loading, data } = useFetch('https://localhost:1337/api/articles?populate=image')
 
     return(
         <div className='grid w-[90%] mx-auto gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
