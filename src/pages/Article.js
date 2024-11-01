@@ -32,7 +32,7 @@ export default function Article() {
 
   return (
     <div>
-      <div className="article-card">
+      <div className="">
           <h2>{data.article.data.attributes.title}</h2>
           <img src={data.article.data.attributes.cover}></img>
           <p>{data.article.data.attributes.body[0].children[0].text}</p>
