@@ -38,6 +38,10 @@ export default function Homepage() {
                 main_text={"We are Real Ale"}
                 sub_text={"Getting boozy since 1973"}
             />
+            <div className="bg-neutral-900 w-full h-full py-5 text-white text-center">
+                <strong className=""><h1 className="text-4xl">Not just about Beer</h1></strong>
+                <p>Everything we do here at Real Ale is about community.</p>
+            </div>
 
             <div>
             {/*

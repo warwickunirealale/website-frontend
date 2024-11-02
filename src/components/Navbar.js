@@ -22,7 +22,7 @@ export default function Navbar() {
 
     return <header className="bg-white sticky top-0 flex-wrap z-[20] px-[2em] mx-auto flex w-full items-center justify-between py-1">
         <div className="size-16">
-            <img src={`http://localhost:1337${data.data.attributes.logo.data.attributes.url}`} alt="logo" />
+            <Link to="/"><img src={`http://localhost:1337${data.data.attributes.logo.data.attributes.url}`} alt="logo" /></Link>
         </div>
         <NavLinks />
     </header>

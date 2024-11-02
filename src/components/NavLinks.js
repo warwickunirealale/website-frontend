@@ -10,25 +10,29 @@ import {
     mobileNavExitProps,
     mobileNavListVariant
 } from "./animationConfig";
+import { useQuery, gql } from "@apollo/client";
+
 
 const activeClassName = "selected navlink";
 const activeStyleCallback = ({ isActive}) => isActive ? activeClassName : "navlink";
 
-const NavElements = () => {
-    return (
-        <>
-            <NavLink to="/">About Us</NavLink>
-            <NavLink to="/">Blog</NavLink>
-            <NavLink to="/">Sponsers</NavLink>
-            <NavLink to="/">Contact Us</NavLink>
-            <Link to="/"><BsInstagram size="32"/></Link>
-            <Link to="/"><BsWhatsapp size="32"/></Link>
-            <Link to="/"><BsTiktok size="32"/></Link>
-        </>
-    )
-};
+const SOCIALMEDIA = gql`
+  query GetSocialLinks {
+    socialmedia {
+      data {
+        id,
+        attributes {
+          instagram,
+          whatsapp,
+          tiktok
+        }
+      }
+    }
+  }
+`
 
 export default function NavLinks() {
+    const { loading, error, data } = useQuery(SOCIALMEDIA);
     const [ isOpen, setIsOpen ] = useState(false);
     const location = useLocation();
 
@@ -40,11 +44,26 @@ export default function NavLinks() {
         setIsOpen(false);
     }, [location.pathname]);
 
-  return (
+    if (loading) {
+        return <></>
+    }
+
+    if (error) {
+        return <p>Error</p>
+    }
+
+    console.log(data);
+    return (
     <>
         <nav className="w-1/3 flex justify-end">
             <div className="hidden w-full justify-between md:flex">
-                <NavElements />
+                <NavLink to="/">About Us</NavLink>
+                <NavLink to="/blogs">Blogs</NavLink>
+                <NavLink to="/">Sponsers</NavLink>
+                <NavLink to="/">Contact Us</NavLink>
+                <a className="" href={data.socialmedia.data.attributes.instagram}><BsInstagram className="cursor-pointer" size="32"/></a>
+                <a className="" href={data.socialmedia.data.attributes.whatsapp}><BsWhatsapp className="cursor-pointer" size="32"/></a>
+                <a className="" href={data.socialmedia.data.attributes.tiktok}><BsTiktok className="cursor-pointer" size="32"/></a>
             </div>
             <div className="md:hidden">
                 <button onClick={toggleNavbar}>
@@ -65,7 +84,7 @@ export default function NavLinks() {
                         <NavLink to="/">About Us</NavLink>
                     </motion.div>
                     <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
-                        <NavLink to="/">Blog</NavLink>
+                        <NavLink to="/blogs">Blogs</NavLink>
                     </motion.div>
                     <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
                         <NavLink to="/">Sponsers</NavLink>
@@ -76,13 +95,13 @@ export default function NavLinks() {
                     <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
                         <table className="mx-auto w-[0.75vw] mt-2 flex flex-row justify-around align-middle">
                             <th>
-                                <a className="" href="https://www.google.com"><BsInstagram className="cursor-pointer" size="32"/></a>
+                                <a className="" href={data.socialmedia.data.attributes.instagram}><BsInstagram className="cursor-pointer" size="32"/></a>
                             </th>
                             <th>
-                                <Link to="/"><BsWhatsapp className="" size="32"/></Link>
+                                <a className="" href={data.socialmedia.data.attributes.whatsapp}><BsWhatsapp className="cursor-pointer" size="32"/></a>
                             </th>
                             <th className="">
-                                <Link to="/"><BsTiktok size="32"/></Link>
+                                <a className="" href={data.socialmedia.data.attributes.tiktok}><BsTiktok className="cursor-pointer" size="32"/></a>
                             </th>
                         </table>
                     </motion.div>
