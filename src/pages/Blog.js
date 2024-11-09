@@ -25,7 +25,7 @@ export default function Blog() {
                 main_text={"Our Blogs"}
                 sub_text={""}
             />
-            <div className="bg-neutral-950 w-full h-full py-5">
+            <div className="bg-neutral-900 w-full h-full py-5">
                 <ArticlesTable />
             </div>
         </div>

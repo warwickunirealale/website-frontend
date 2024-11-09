@@ -4,6 +4,6 @@
 
 @layer base {
   html {
-    @apply bg-gray-500;
+    background-color: #171717;
   }
 }
