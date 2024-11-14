@@ -55,12 +55,12 @@ export default function NavLinks() {
     console.log(data);
     return (
     <>
-        <nav className="w-1/3 flex justify-end">
-            <div className="hidden w-full justify-between md:flex">
-                <NavLink to="/">About Us</NavLink>
+        <nav className="flex justify-end">
+            <div className="space-x-10 hidden w-full justify-between md:flex">
+                <NavLink to="/about-us">About Us</NavLink>
                 <NavLink to="/blogs">Blogs</NavLink>
-                <NavLink to="/">Sponsers</NavLink>
-                <NavLink to="/">Contact Us</NavLink>
+                <NavLink to="/sponsers">Sponsers</NavLink>
+                <NavLink to="/contact-us">Contact Us</NavLink>
                 <a className="" href={data.socialmedia.data.attributes.instagram}><BsInstagram className="cursor-pointer" size="32"/></a>
                 <a className="" href={data.socialmedia.data.attributes.whatsapp}><BsWhatsapp className="cursor-pointer" size="32"/></a>
                 <a className="" href={data.socialmedia.data.attributes.tiktok}><BsTiktok className="cursor-pointer" size="32"/></a>
@@ -81,19 +81,19 @@ export default function NavLinks() {
                 animate="show"
                 className="mt-4 basis-full text-center md:hidden leading-loose">
                     <motion.div className={activeStyleCallback} variants={mobileNavListVariant} {...mobileNavExitProps}>
-                        <NavLink to="/">About Us</NavLink>
+                        <NavLink to="/about-us">About Us</NavLink>
                     </motion.div>
                     <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
                         <NavLink to="/blogs">Blogs</NavLink>
                     </motion.div>
                     <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
-                        <NavLink to="/">Sponsers</NavLink>
+                        <NavLink to="/sponsers">Sponsers</NavLink>
                     </motion.div>
                     <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
-                        <NavLink to="/">Contact Us</NavLink>
+                        <NavLink to="/contact-us">Contact Us</NavLink>
                     </motion.div>
                     <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
-                        <table className="mx-auto w-[0.75vw] mt-2 flex flex-row justify-around align-middle">
+                        <table className="mx-auto w-[0.75vw] mt-2 flex flex-row justify-center align-middle">
                             <th>
                                 <a className="" href={data.socialmedia.data.attributes.instagram}><BsInstagram className="cursor-pointer" size="32"/></a>
                             </th>

@@ -7,6 +7,8 @@ import Article from "./pages/Article";
 import AboutUs from "./pages/AboutUs";
 import Header from "./components/Header";
 import Blog from "./pages/Blog";
+import ContactUs from "./pages/ContactUs";
+import Sponsers from "./pages/Sponsers";
 
 // Apollo client
 const client = new ApolloClient({
@@ -24,6 +26,8 @@ function App() {
               <Route path="/articles/:id" element={<Article />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/blogs" element={<Blog />} />
+              <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/sponsers" element={<Sponsers />} />
             </Routes>
           </div>
         </ApolloProvider>

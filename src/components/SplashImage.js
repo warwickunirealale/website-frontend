@@ -15,8 +15,8 @@ export default function SplashImage({ image, main_text, sub_text }) {
             }}></div>
 
             <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-                <strong className="text-2xl md:text-4x1">{main_text}</strong>
-                <i className="text-lg md:txt-2z1 mt-2">{sub_text}</i>
+                <strong className="text-4xl md:text-4xl">{main_text}</strong>
+                <i className="text-xl md:text-xl mt-2">{sub_text}</i>
             </div>
         </div>
     )
