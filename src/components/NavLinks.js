@@ -60,6 +60,7 @@ export default function NavLinks() {
                 <NavLink to="/about-us">About Us</NavLink>
                 <NavLink to="/blogs">Blogs</NavLink>
                 <NavLink to="/sponsers">Sponsers</NavLink>
+                <NavLink to="/real-ale-festival">Real Ale Festival</NavLink>
                 <NavLink to="/contact-us">Contact Us</NavLink>
                 <a className="" href={data.socialmedia.data.attributes.instagram}><BsInstagram className="cursor-pointer" size="32"/></a>
                 <a className="" href={data.socialmedia.data.attributes.whatsapp}><BsWhatsapp className="cursor-pointer" size="32"/></a>

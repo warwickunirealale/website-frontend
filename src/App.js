@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import Blog from "./pages/Blog";
 import ContactUs from "./pages/ContactUs";
 import Sponsers from "./pages/Sponsers";
+import RealAleFestival from "./pages/RealAleFestival";
 
 // Apollo client
 const client = new ApolloClient({
@@ -28,6 +29,7 @@ function App() {
               <Route path="/blogs" element={<Blog />} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/sponsers" element={<Sponsers />} />
+              <Route path="/real-ale-festival" element={<RealAleFestival />} />
             </Routes>
           </div>
         </ApolloProvider>
