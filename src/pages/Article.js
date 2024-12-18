@@ -1,6 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
+import Header from '../components/Header'
+import SplashImage from '../components/SplashImage'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 
 const ARTICLE = gql`
   query GetArticle($id: ID!) {
@@ -23,20 +27,21 @@ export default function Article() {
   })
   
   if (loading) {
-    return <p>Loading...</p>
+    return <p></p>
   }
   if (error) {
       return <p>Error</p>
   }
-  console.log(data)
 
   return (
     <div>
+      <Navbar />
       <div className="">
           <h2>{data.article.data.attributes.title}</h2>
           <img src={data.article.data.attributes.cover}></img>
           <p>{data.article.data.attributes.body[0].children[0].text}</p>
       </div>
+      <Footer />
     </div>
   )
 }

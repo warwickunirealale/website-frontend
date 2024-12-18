@@ -17,14 +17,16 @@ export default function ArticlesTable() {
     console.log(data);
 
     return(
-        <div className='grid w-[90%] mx-auto gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+        <div className='flex flex-wrap w-[90%] mx-auto gap-4 justify-center'>
             {data.data.map((blog) => (
-                    <Link key={blog.id} to={`/${blog.id}`}
-                    className='flex flex-col items-center p-4 border rounded sahdow-sm hover:shadow-md'>
-                        <img src={`http://localhost:1337/${blog.attributes.image.data.attributes.url}`}
+                    <Link key={blog.id} to={`/blogs/${blog.id}`}
+                    className='flex flex-col items-center bg-white p-4 border rounded-lg shadow-sm hover:shadow-md w-64'>
+                        <img src={`http://localhost:1337${blog.attributes.image.data.attributes.url}`}
                         alt="logo"
-                        className="w-full h-32 object-cover rounded mb-2" />
-                        <strong className="text-center">{blog.attributes.title}</strong>
+                        className="w-full h-48 rounded-t-lg object-contain" />
+                        <div className='mt-2 text-center'>
+                            <strong className="text-center text-lg">{blog.attributes.title}</strong>
+                        </div>
                     </Link>
             ))}
         </div>

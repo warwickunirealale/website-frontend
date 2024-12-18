@@ -25,7 +25,7 @@ export default function Homepage() {
                 sub_text={"Getting boozy since 1973"}
             />
             <div className="bg-neutral-900 w-full h-full py-5 text-white text-center">
-                <strong className=""><h1 className="text-4xl">What we're all about</h1></strong>
+                <strong className=""><h1 className="text-4xl mt-6">What we're all about</h1></strong>
                 <div className="container mx-auto py-16 space-y-16">
                     {data.data.attributes.about.map((entry, index) => (
                         <div key={entry.id}

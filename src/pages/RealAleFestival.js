@@ -15,6 +15,8 @@ export default function RealAleFestival() {
         return <p>Error</p>
     }
 
+    console.log(data);
+
     return (
         <div>
             <Navbar />
@@ -24,19 +26,26 @@ export default function RealAleFestival() {
                 sub_text={""}
             />
             <div className="bg-neutral-900 w-full h-full py-5 text-white text-center">
-            <strong className=""><h1 className="text-4xl">What the festival is all about</h1></strong>
+            <strong className=""><h1 className="text-4xl mt-6">What the festival is all about</h1></strong>
             <p className="text-2xl">{`With a legacy of ${data.data.attributes.year_count} and still going, the Real Ale Festival is the largest student-run beer festival in Europe`}</p>
-            {data.data.attributes.details.map((entry, index) => (
-                <div key={entry.id}>
-                    <strong><h1 className="text-3xl">{entry.header}</h1></strong>
-                    <p className="text-2xl">{entry.body}</p>
-                    {entry.link && (
-                        <Link to={entry.link}>
-                            {entry.link_text}
-                        </Link>
-                    )}
-                </div>
-            ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center py-8">
+                {data.data.attributes.details.map((entry, index) => (
+                    <div key={entry.id} className={`p-4 mx-6 ${
+                        index % 2 === 0 && index === data.data.attributes.details.length - 1
+                            ? 'col-span-2 justify-self-center'
+                            : ''
+                    }`}>
+                        <strong><h1 className="text-3xl">{entry.header}</h1></strong>
+                        <p className="text-xl">{entry.body}</p>
+                        {entry.link && (
+                            <Link to={entry.link}
+                            className="inline-block bg-white text-black py-2 px-4 rounded-lg mt-4 text center hover:bg-gray-300 transition duration-300 max-w-max mx-auto">
+                                {entry.link_text}
+                            </Link>
+                        )}
+                    </div>
+                ))}
+            </div>
             </div>
             <Footer />
         </div>

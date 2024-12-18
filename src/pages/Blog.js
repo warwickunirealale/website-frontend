@@ -5,6 +5,7 @@ import { useQuery, gql } from '@apollo/client'
 import Navbar from '../components/Navbar'
 import SplashImage from '../components/SplashImage'
 import ArticlesTable from '../components/ArticlesTable'
+import Footer from '../components/Footer'
 
 export default function Blog() {
     const { loading, error, data } = useFetch('http://localhost:1337/api/blog-mainpage?populate=splash_image')
@@ -25,9 +26,10 @@ export default function Blog() {
                 main_text={"Our Blogs"}
                 sub_text={""}
             />
-            <div className="bg-neutral-900 w-full h-full py-5">
+            <div className="bg-neutral-900 w-full h-full py-5 mt-6">
                 <ArticlesTable />
             </div>
+            <Footer />
         </div>
     )
 }
