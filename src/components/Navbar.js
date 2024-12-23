@@ -4,15 +4,6 @@ import useFetch from '../hooks/useFetch'
 import { BsInstagram, BsWhatsapp, BsTiktok } from "react-icons/bs";
 import NavLinks from './NavLinks';
 
-
-/*
-const NavbarElement = ({ url, text }) => {
-    <li>
-        <a href={url}>{text}</a>
-    </li>
-}
-*/
-
 export default function Navbar() {
     const { loading, error, data } = useFetch('http://localhost:1337/api/socialmedia?populate=logo')
     if (loading)

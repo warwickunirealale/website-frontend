@@ -6,6 +6,7 @@ const useFetch = (url) => {
     const [loading, setLoading] = useState(true)    // Determine if we are loading any content
 
     useEffect(() => {
+
         const fetchData = async () => {
             setLoading(true)
 

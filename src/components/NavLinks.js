@@ -94,7 +94,7 @@ export default function NavLinks() {
                         <NavLink to="/contact-us">Contact Us</NavLink>
                     </motion.div>
                     <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
-                        <table className="mx-auto w-[0.75vw] mt-2 flex flex-row justify-center align-middle">
+                        <table className="mx-auto w-[0.75vw] mt-2 flex flex-row justify-center align-middle space-x-8">
                             <th>
                                 <a className="" href={data.socialmedia.data.attributes.instagram}><BsInstagram className="cursor-pointer" size="32"/></a>
                             </th>

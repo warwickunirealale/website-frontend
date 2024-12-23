@@ -26,8 +26,8 @@ export default function Blog() {
                 main_text={"Our Blogs"}
                 sub_text={""}
             />
-            <div className="bg-neutral-900 w-full h-full py-5 mt-6">
-                <ArticlesTable />
+            <div className="bg-neutral-900 w-full h-full py-5 my-6">
+                <ArticlesTable initialFilters={{title: 'BRUBL', categories: [2]}} />
             </div>
             <Footer />
         </div>
