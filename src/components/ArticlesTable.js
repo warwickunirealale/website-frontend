@@ -14,11 +14,24 @@ export default function ArticlesTable({ initialFilters }) {
         categories: initialFilters.categories || [],
     });
 
-    const [queryUrl, setQueryUrl] = useState('http://localhost:1337/api/articles?populate=*');
+    // Build initial query based on the initialFilters prop passed in
+    const [queryUrl, setQueryUrl] = useState(() => {
+        const queryParams = []
+        if (filters.title) {
+            queryParams.push(`filters[title][$contains]=${encodeURIComponent(filters.title)}`);
+        }
+        if (filters.categories.length > 0) {
+            queryParams.push(
+                filters.categories.map((category) => `filters[categories][id][$in]=${category}`).join('&')
+            );
+        }
+        return `http://localhost:1337/api/articles?populate=*&${queryParams.join('&')}`;
+    }, [filters]);
 
     // Fetch all categories for the checkboxes
     const { error: categoryError, loading: categoryLoading, data: categoryData } = useFetch('http://localhost:1337/api/categories');
 
+    // Update the query URL whenever filters change
     useEffect(() => {
         const queryParams = []
         if (filters.title) {
@@ -52,18 +65,6 @@ export default function ArticlesTable({ initialFilters }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         setFilters(formInputs);
-
-        const queryParams = [];
-        if (formInputs.title) {
-            queryParams.push(`filters[title][$contains]=${encodeURIComponent(formInputs.title)}`);
-        }
-        if (formInputs.categories.length > 0) {
-            queryParams.push(
-                formInputs.categories.map((category) => `filters[categories][id][$in]=${category}`).join('&')
-            );
-        }
-        const newUrl = `http://localhost:1337/api/articles?populate=image&${queryParams.join('&')}`;
-        setQueryUrl(newUrl);
     };
 
     if (loading || categoryLoading) {
