@@ -5,7 +5,6 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Homepage from "./pages/Homepage";
 import Article from "./pages/Article";
 import AboutUs from "./pages/AboutUs";
-import Header from "./components/Header";
 import Blog from "./pages/Blog";
 import ContactUs from "./pages/ContactUs";
 import Sponsers from "./pages/Sponsers";

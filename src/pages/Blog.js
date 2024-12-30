@@ -1,7 +1,5 @@
 import React from 'react'
 import useFetch from '../hooks/useFetch'
-import { Link } from 'react-router-dom'
-import { useQuery, gql } from '@apollo/client'
 import Navbar from '../components/Navbar'
 import SplashImage from '../components/SplashImage'
 import ArticlesTable from '../components/ArticlesTable'

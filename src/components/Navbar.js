@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
-import { BsInstagram, BsWhatsapp, BsTiktok } from "react-icons/bs";
 import NavLinks from './NavLinks';
 
 export default function Navbar() {

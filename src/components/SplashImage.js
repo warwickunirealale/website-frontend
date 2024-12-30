@@ -6,7 +6,7 @@ export default function SplashImage({ image, main_text, sub_text }) {
         <div className="relative text-center text-white w-full h-[600px] overflow-hidden">
             <img
                 src={image}
-                alt="Splash Image"
+                alt="Splash"
                 className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 opacity-85"

@@ -128,7 +128,7 @@ export default function ContactUs() {
                     </label>
                     <div className="flex justify-end items-center pt-4 space-x-4">
                         <ReCAPTCHA 
-                            sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY_DEVELOP}
+                            sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY_PROD}
                             onChange={handleRecaptchaChange}
                             ref={recaptchaRef}
                             className=""
