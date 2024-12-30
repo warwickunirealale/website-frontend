@@ -27,6 +27,7 @@ function App() {
               <Route path="/blogs/:id" element={<Article />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/blogs" element={<Blog />} />
+              <Route path="/blogs/charity" element={<Blog initialFilters={ { title: '', categories: [4] } }/>} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/sponsers" element={<Sponsers />} />
               <Route path="/real-ale-festival" element={<RealAleFestival />} />

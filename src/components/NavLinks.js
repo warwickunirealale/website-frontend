@@ -1,4 +1,4 @@
-import { NavLink, Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import React from 'react'
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
@@ -57,14 +57,14 @@ export default function NavLinks() {
     <>
         <nav className="flex justify-end">
             <div className="space-x-10 hidden w-full justify-between md:flex">
-                <NavLink to="/about-us">About Us</NavLink>
-                <NavLink to="/blogs">Blogs</NavLink>
-                <NavLink to="/sponsers">Sponsers</NavLink>
-                <NavLink to="/real-ale-festival">Real Ale Festival</NavLink>
-                <NavLink to="/contact-us">Contact Us</NavLink>
-                <a className="" href={data.socialmedia.data.attributes.instagram}><BsInstagram className="cursor-pointer" size="32"/></a>
-                <a className="" href={data.socialmedia.data.attributes.whatsapp}><BsWhatsapp className="cursor-pointer" size="32"/></a>
-                <a className="" href={data.socialmedia.data.attributes.tiktok}><BsTiktok className="cursor-pointer" size="32"/></a>
+                <NavLink to="/about-us" className="pt-1 transition-transform hover:scale-110 duration-200">About Us</NavLink>
+                <NavLink to="/blogs" className="pt-1 transition-transform hover:scale-110 duration-200">Blogs</NavLink>
+                <NavLink to="/sponsers" className="pt-1 transition-transform hover:scale-110 duration-200">Sponsers</NavLink>
+                <NavLink to="/real-ale-festival" className="pt-1 transition-transform hover:scale-110 duration-200">Real Ale Festival</NavLink>
+                <NavLink to="/contact-us" className="pt-1 transition-transform hover:scale-110 duration-200">Contact Us</NavLink>
+                <a className="" href={data.socialmedia.data.attributes.instagram}><BsInstagram className="cursor-pointer transition-transform hover:scale-110 duration-200" size="32"/></a>
+                <a className="" href={data.socialmedia.data.attributes.whatsapp}><BsWhatsapp className="cursor-pointer transition-transform hover:scale-110 duration-200" size="32"/></a>
+                <a className="" href={data.socialmedia.data.attributes.tiktok}><BsTiktok className="cursor-pointer transition-transform hover:scale-110 duration-200" size="32"/></a>
             </div>
             <div className="md:hidden">
                 <button onClick={toggleNavbar}>
@@ -82,27 +82,27 @@ export default function NavLinks() {
                 animate="show"
                 className="mt-4 basis-full text-center md:hidden leading-loose">
                     <motion.div className={activeStyleCallback} variants={mobileNavListVariant} {...mobileNavExitProps}>
-                        <NavLink to="/about-us">About Us</NavLink>
+                        <NavLink className="transition-transform hover:scale-110 duration-200 block" to="/about-us">About Us</NavLink>
                     </motion.div>
                     <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
-                        <NavLink to="/blogs">Blogs</NavLink>
+                        <NavLink to="/blogs" className="transition-transform hover:scale-110 duration-200 block">Blogs</NavLink>
                     </motion.div>
                     <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
-                        <NavLink to="/sponsers">Sponsers</NavLink>
+                        <NavLink to="/sponsers" className="transition-transform hover:scale-110 duration-200 block">Sponsers</NavLink>
                     </motion.div>
                     <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
-                        <NavLink to="/contact-us">Contact Us</NavLink>
+                        <NavLink to="/contact-us" className="transition-transform hover:scale-110 duration-200 block">Contact Us</NavLink>
                     </motion.div>
                     <motion.div variants={mobileNavListVariant} {...mobileNavExitProps}>
                         <table className="mx-auto w-[0.75vw] mt-2 flex flex-row justify-center align-middle space-x-8">
                             <th>
-                                <a className="" href={data.socialmedia.data.attributes.instagram}><BsInstagram className="cursor-pointer" size="32"/></a>
+                                <a className="" href={data.socialmedia.data.attributes.instagram}><BsInstagram className="cursor-pointer transition-transform hover:scale-110 duration-200" size="32"/></a>
                             </th>
                             <th>
-                                <a className="" href={data.socialmedia.data.attributes.whatsapp}><BsWhatsapp className="cursor-pointer" size="32"/></a>
+                                <a className="" href={data.socialmedia.data.attributes.whatsapp}><BsWhatsapp className="cursor-pointer transition-transform hover:scale-110 duration-200" size="32"/></a>
                             </th>
                             <th className="">
-                                <a className="" href={data.socialmedia.data.attributes.tiktok}><BsTiktok className="cursor-pointer" size="32"/></a>
+                                <a className="" href={data.socialmedia.data.attributes.tiktok}><BsTiktok className="cursor-pointer transition-transform hover:scale-110 duration-200" size="32"/></a>
                             </th>
                         </table>
                     </motion.div>

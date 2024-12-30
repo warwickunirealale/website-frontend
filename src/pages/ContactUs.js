@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SplashImage from "../components/SplashImage";
 import Navbar from "../components/Navbar";
 import useFetch from "../hooks/useFetch";
@@ -84,46 +84,51 @@ export default function ContactUs() {
                 sub_text=""
             />
             <div className="bg-neutral-900 w-full h-full py-5 text-white text-center">
-                <strong className=""><h1 className="text-4xl mt-6">Get in touch</h1></strong>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                    <label className="block">
-                        Your Email:
-                        <input
-                            type="email"
-                            id="email"
-                            className="block w-full p-2 mt-1 bg-neutral-800 border border-neutral-700 rounded"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                    </label>
-                    <label className="block">
-                        Name:
-                        <input 
-                            type="text"
-                            id="name"
-                            className="block w-full p-2 mt-1 bg-neutral-800 border border-neutral-700 rounded"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            required
-                        />
-                    </label>
-                    <label className="block">
+                <strong className=""><h1 className="text-4xl my-6">Get in touch</h1></strong>
+                <form onSubmit={handleSubmit} className="space-y-4 max-w-2xl mx-auto p-6 rounded-lg">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <label className="block text-left">
+                            Your Email:
+                            <input
+                                type="email"
+                                id="email"
+                                className="block w-full p-2 mt-1 bg-white text-black border border-neutral-700 rounded"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </label>
+                        <label className="block text-left">
+                            Name:
+                            <input 
+                                type="text"
+                                id="name"
+                                className="block w-full p-2 mt-1 bg-white text-black border border-neutral-700 rounded"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                            />
+                        </label>
+                    </div>
+                    <label className="block text-left">
                         Message:
                         <textarea
                             id="message"
                             value={message}
-                            className="block w-full p-2 mt-1 bg-neutral-800 border border-neutral-700 rounded"
+                            className="block w-full p-2 mt-1 bg-white border text-black border-neutral-700 rounded"
                             onChange={(e) => setMessage(e.target.value)}
                             required
                         />
                     </label>
-                    <ReCAPTCHA 
-                        sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY_DEVELOP}
-                        onChange={handleRecaptchaChange}
-                        ref={recaptchaRef}
-                    />
-                    <button type="submit" disabled={sendingEmail}>Send</button>
+                    <div className="flex justify-end items-center pt-4 space-x-4">
+                        <ReCAPTCHA 
+                            sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY_DEVELOP}
+                            onChange={handleRecaptchaChange}
+                            ref={recaptchaRef}
+                            className=""
+                        />
+                        <button type="submit" disabled={sendingEmail} className="px-6 py-2 bg-green-600 hover:bg-green-700 transition duration-300 text-white rounded">Send</button>
+                    </div>
                 </form>
             </div>
             <Footer />

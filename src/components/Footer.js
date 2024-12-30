@@ -19,9 +19,9 @@ export default function Footer() {
                 <img className="size-32" src={`http://localhost:1337${data.data.attributes.logo.data.attributes.url}`} alt="logo" />
             </div>
             <div className="flex flex-row justify-center space-x-5 py-10">
-                <Link to="/about-us" className="text-xl">About us</Link>
-                <Link to="/contact-us" className="text-xl">Contact Us</Link>
-                <Link to="/real-ale-festival" className="text-xl">Real Ale Festival</Link>
+                <Link to="/about-us" className="text-xl transition-transform hover:scale-110 duration-200">About us</Link>
+                <Link to="/contact-us" className="text-xl transition-transform hover:scale-110 duration-200">Contact Us</Link>
+                <Link to="/real-ale-festival" className="text-xl transition-transform hover:scale-110 duration-200">Real Ale Festival</Link>
             </div>
         </div>
     )
