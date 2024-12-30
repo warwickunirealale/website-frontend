@@ -24,7 +24,7 @@ export default function ContactUs() {
     const [message, setMessage] = useState('')
     const [name, setName] = useState('')
     const [sendEmail, { loading: sendingEmail }] = useMutation(SEND_EMAIL);
-    const [submitStatus, setSubmitStatus] = useState(null);
+    const [submitStatus, setSubmitStatus] = useState(null); // dsada
     const [recaptchaResponse, setRecaptchaResponse] = useState(null)
     const recaptchaRef = useRef(null)
 
@@ -85,6 +85,12 @@ export default function ContactUs() {
             />
             <div className="bg-neutral-900 w-full h-full py-5 text-white text-center">
                 <strong className=""><h1 className="text-4xl my-6">Get in touch</h1></strong>
+                {submitStatus === 'success' && (
+                    <strong className="text-xl text-green-400">We have received your email.</strong>
+                )}
+                {submitStatus === 'error' && (
+                    <strong className="text-xl text-red-500">An error occurred, please try again.</strong>
+                )}
                 <form onSubmit={handleSubmit} className="space-y-4 max-w-2xl mx-auto p-6 rounded-lg">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <label className="block text-left">

@@ -52,7 +52,6 @@ export default function NavLinks() {
         return <p>Error</p>
     }
 
-    console.log(data);
     return (
     <>
         <nav className="flex justify-end">

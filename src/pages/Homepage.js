@@ -15,7 +15,6 @@ export default function Homepage() {
         return <p>Error</p>
     }
     
-    console.log(data)
     return (
         <div>
             <Navbar />
@@ -32,7 +31,7 @@ export default function Homepage() {
                         className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:text-left' : 'md:flex-row-reverse md:text-right'} `}>
                             <div className='w-full md:w-1/3 flex justify-center'>
                                 <img src={`http://localhost:1337${entry.image.data.attributes.url}`}
-                                    alt={`${entry.header} Image`}
+                                    alt={`${entry.header}`}
                                     className="object-cover w-full h-64 md:h-80 rounded-lg"/>
                             </div>
                             <div className="w-full md:w-2/3 p-6 flex flex-col justify-center">
