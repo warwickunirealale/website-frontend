@@ -15,8 +15,6 @@ export default function RealAleFestival() {
         return <p>Error</p>
     }
 
-    console.log(data);
-
     return (
         <div>
             <Navbar />
