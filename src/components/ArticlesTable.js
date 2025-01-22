@@ -28,11 +28,11 @@ export default function ArticlesTable({ initialFilters = { title: '', categories
                 filters.categories.map((category) => `filters[categories][id][$in]=${category}`).join('&')
             );
         }
-        return `http://localhost:1337/api/articles?populate=*&${queryParams.join('&')}`;
+        return `https://warwickunirealale.containers.uwcs.co.uk/api/articles?populate=*&${queryParams.join('&')}`;
     }, [filters]);
 
     // Fetch all categories for the checkboxes
-    const { error: categoryError, loading: categoryLoading, data: categoryData } = useFetch('http://localhost:1337/api/categories');
+    const { error: categoryError, loading: categoryLoading, data: categoryData } = useFetch('https://warwickunirealale.containers.uwcs.co.uk/api/categories');
 
     // Update the query URL whenever filters change
     useEffect(() => {
@@ -45,7 +45,7 @@ export default function ArticlesTable({ initialFilters = { title: '', categories
                 filters.categories.map((category) => `filters[categories][id][$in]=${category}`).join('&')
             );
         }
-        const initialUrl = `http://localhost:1337/api/articles?populate=*&${queryParams.join('&')}`;
+        const initialUrl = `https://warwickunirealale.containers.uwcs.co.uk/api/articles?populate=*&${queryParams.join('&')}`;
         setQueryUrl(initialUrl);
     }, [filters])
     

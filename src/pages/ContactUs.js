@@ -18,7 +18,7 @@ mutation SendEmail($email: String!, $name: String!, $message: String!, $recaptch
 
 
 export default function ContactUs() {
-    const { loading, error, data } = useFetch('http://localhost:1337/api/about-us-page?populate=aboutus_text,splash_image')
+    const { loading, error, data } = useFetch('https://warwickunirealale.containers.uwcs.co.uk/api/about-us-page?populate=aboutus_text,splash_image')
 
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
@@ -79,7 +79,7 @@ export default function ContactUs() {
         <div>
             <Navbar />
             <SplashImage
-                image={`http://localhost:1337${data.data.attributes.splash_image.data.attributes.url}`}
+                image={`https://warwickunirealale.containers.uwcs.co.uk${data.data.attributes.splash_image.data.attributes.url}`}
                 main_text="Contact Us"
                 sub_text=""
             />

@@ -6,7 +6,7 @@ import useFetch from "../hooks/useFetch";
 import { Link } from "react-router-dom";
 
 export default function Sponsers() {
-    const { loading, error, data } = useFetch('http://localhost:1337/api/sponsers-page?populate=flagships,flagships.logo,sponsers,sponsers.logo,splash_image')
+    const { loading, error, data } = useFetch('https://warwickunirealale.containers.uwcs.co.uk/api/sponsers-page?populate=flagships,flagships.logo,sponsers,sponsers.logo,splash_image')
 
     if (loading) {
         return <p>Loading...</p>
@@ -19,7 +19,7 @@ export default function Sponsers() {
         <div>
             <Navbar />
             <SplashImage 
-                image={`http://localhost:1337${data.data.attributes.splash_image.data.attributes.url}`}
+                image={`https://warwickunirealale.containers.uwcs.co.uk${data.data.attributes.splash_image.data.attributes.url}`}
                 main_text="Our Sponsers"
                 sub_text=""
             />
@@ -30,7 +30,7 @@ export default function Sponsers() {
                         <Link to={`/${entry.link}` | "/"}
                         className="group flex justify-center items-center">
                             <img className="w-full max-w-xs grayscale transition-all duration-300 group-hover:grayscale-0 group-hover:scale-105"
-                            src={`http://localhost:1337${entry.logo.data.attributes.url}`} key={entry.id} alt={`Flagship sponser ${entry.name} logo`} />
+                            src={`https://warwickunirealale.containers.uwcs.co.uk${entry.logo.data.attributes.url}`} key={entry.id} alt={`Flagship sponser ${entry.name} logo`} />
                             </Link>
                     ))}
                 </div>
@@ -40,7 +40,7 @@ export default function Sponsers() {
                         <Link to={`/${entry.link}` | "/"}
                         className="group flex justify-center items-center">
                             <img className="w-full max-w-xs grayscale transition-all duration-300 group-hover:grayscale-0 group-hover:scale-105"
-                            src={`http://localhost:1337${entry.logo.data.attributes.url}`} key={entry.id} alt={`Sponser ${entry.name} logo`} />
+                            src={`https://warwickunirealale.containers.uwcs.co.uk${entry.logo.data.attributes.url}`} key={entry.id} alt={`Sponser ${entry.name} logo`} />
                             </Link>
                     ))}
                 </div>

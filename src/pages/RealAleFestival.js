@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 
 export default function RealAleFestival() {
-    const { loading, error, data } = useFetch("http://localhost:1337/api/festival-page?populate=splash_image,details");
+    const { loading, error, data } = useFetch("https://warwickunirealale.containers.uwcs.co.uk/api/festival-page?populate=splash_image,details");
 
     if (loading) {
         return <></>
@@ -19,7 +19,7 @@ export default function RealAleFestival() {
         <div>
             <Navbar />
             <SplashImage
-                image={`http://localhost:1337${data.data.attributes.splash_image.data.attributes.url}`}
+                image={`https://warwickunirealale.containers.uwcs.co.uk${data.data.attributes.splash_image.data.attributes.url}`}
                 main_text={"The Real Ale Festival"}
                 sub_text={""}
             />

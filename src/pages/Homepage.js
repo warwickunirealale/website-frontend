@@ -6,7 +6,7 @@ import SplashImage from '../components/SplashImage'
 import Footer from '../components/Footer'
 
 export default function Homepage() {
-    const { loading, error, data } = useFetch('http://localhost:1337/api/homepage?populate=about,about.image,splash_image')
+    const { loading, error, data } = useFetch('https://warwickunirealale.containers.uwcs.co.uk/api/homepage?populate=about,about.image,splash_image')
 
     if (loading) {
         return <p>Loading...</p>
@@ -19,7 +19,7 @@ export default function Homepage() {
         <div>
             <Navbar />
             <SplashImage
-                image={`http://localhost:1337${data.data.attributes.splash_image.data.attributes.url}`}
+                image={`https://warwickunirealale.containers.uwcs.co.uk${data.data.attributes.splash_image.data.attributes.url}`}
                 main_text={"We are Real Ale"}
                 sub_text={"Getting boozy since 1973"}
             />
@@ -30,7 +30,7 @@ export default function Homepage() {
                         <div key={entry.id}
                         className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:text-left' : 'md:flex-row-reverse md:text-right'} `}>
                             <div className='w-full md:w-1/3 flex justify-center'>
-                                <img src={`http://localhost:1337${entry.image.data.attributes.url}`}
+                                <img src={`https://warwickunirealale.containers.uwcs.co.uk${entry.image.data.attributes.url}`}
                                     alt={`${entry.header}`}
                                     className="object-cover w-full h-64 md:h-80 rounded-lg"/>
                             </div>

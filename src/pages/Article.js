@@ -8,7 +8,7 @@ import { BlocksRenderer } from '@strapi/blocks-react-renderer'
 export default function Article() {
   const { id } = useParams()
   
-  const { loading, error, data } = useFetch(`http://localhost:1337/api/articles/${id}?populate=*`)
+  const { loading, error, data } = useFetch(`https://warwickunirealale.containers.uwcs.co.uk/api/articles/${id}?populate=*`)
 
   if (loading) {
     return <p></p>
@@ -24,7 +24,7 @@ export default function Article() {
           <hr className="my-4 border-t w-full mx-auto md:w-[45%] border-gray-300" />
           <div className="flex justify-center">
             <img
-              src={`http://localhost:1337${data.data.attributes.image.data.attributes.url}`}
+              src={`https://warwickunirealale.containers.uwcs.co.uk${data.data.attributes.image.data.attributes.url}`}
               alt={`${data.data.attributes.title}`}
               className='w-full md:w-[45%] h-auto object-contain'
             />
