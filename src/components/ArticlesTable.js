@@ -128,7 +128,7 @@ export default function ArticlesTable({ initialFilters = { title: '', categories
                 {data?.data.map((blog) => (
                         <Link key={blog.id} to={`/blogs/${blog.id}`}
                         className='flex flex-col items-center bg-white p-4 border rounded-lg shadow-sm hover:shadow-md w-64 transition-transform hover:scale-105'>
-                            <img src={`http://localhost:1337${blog.attributes.image.data.attributes.url}`}
+                            <img src={`https://warwickunirealale.containers.uwcs.co.uk${blog.attributes.image.data.attributes.url}`}
                             alt="logo"
                             className="w-full h-48 rounded-t-lg object-contain" />
                             <div className='mt-2 text-center'>
