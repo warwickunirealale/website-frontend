@@ -25,7 +25,7 @@ export default function Homepage() {
             />
             <div className="bg-neutral-900 w-full h-full py-5 text-white text-center">
                 <strong className=""><h1 className="text-4xl mt-6">What we're all about</h1></strong>
-                <div className="container mx-auto py-16 space-y-16">
+                <div className="container mx-auto py-16 space-y-16 px-16">
                     {data.data.attributes.about.map((entry, index) => (
                         <div key={entry.id}
                         className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:text-left' : 'md:flex-row-reverse md:text-right'} `}>
