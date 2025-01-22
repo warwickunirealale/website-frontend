@@ -20,11 +20,11 @@ export default function Sponsers() {
             <Navbar />
             <SplashImage 
                 image={`https://warwickunirealale.containers.uwcs.co.uk${data.data.attributes.splash_image.data.attributes.url}`}
-                main_text="Our Sponsers"
+                main_text="Our Sponsors"
                 sub_text=""
             />
             <div className="bg-neutral-900 w-full h-full py-5 text-white text-center">
-                <strong className=""><h1 className="text-4xl mt-6 mb-12">Our Flagship Sponsers</h1></strong>
+                <strong className=""><h1 className="text-4xl mt-6 mb-12">Our Flagship Sponsors</h1></strong>
                 <div className="flex flex-wrap justify-center gap-36">
                     {data.data.attributes.flagships.map(entry => (
                         <Link to={`/${entry.link}` | "/"}
@@ -34,7 +34,7 @@ export default function Sponsers() {
                             </Link>
                     ))}
                 </div>
-                <strong className=""><h1 className="text-3xl mt-6 mb-12">Our Sponsers</h1></strong>
+                <strong className=""><h1 className="text-3xl mt-6 mb-12">Our Sponsors</h1></strong>
                 <div className="mx-16 flex flex-wrap justify-center gap-36">
                     {data.data.attributes.sponsers.map(entry => (
                         <Link to={`/${entry.link}` | "/"}
